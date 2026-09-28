@@ -1,0 +1,952 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$crpvcZ0mg4RU2AVj87wV6M$dugYttVOQoLA8Ypm88ClGRzQeUNDLmLcUjKCPolcJEU=",
+    "last_login": "2026-09-28T11:53:50.494Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "priyarajendren2303@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-28T11:08:14.013Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "landing.sitesettings",
+  "pk": 1,
+  "fields": {
+    "site_name": "ஊர் உழவன்",
+    "tagline": "மொத்த விற்பனை",
+    "logo": "media/ooruzhavan/branding/logo_oor_ulavan_copy.jpg_uk5bia",
+    "phone_number": "+91 99940 21305",
+    "email": "orders@oorulava.com",
+    "location": "தமிழ்நாடு",
+    "topbar_phone_label": "தொடர்புக்கு",
+    "topbar_email_label": "மின்னஞ்சல்",
+    "whatsapp_number": "919994021305",
+    "whatsapp_default_message": "வணக்கம் ஊர் உழவன்! எனது தேவைப் பட்டியலை அனுப்ப விரும்புகிறேன்.",
+    "header_cta_text": "தேவைப் பட்டியலை அனுப்புங்கள்",
+    "header_cta_icon": "fa-regular fa-paper-plane",
+    "show_floating_whatsapp": true,
+    "show_floating_call": true,
+    "updated_at": "2026-09-28T11:58:52.088Z"
+  }
+},
+{
+  "model": "landing.topbarhighlight",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "text": "புதிய பொருட்கள்"
+  }
+},
+{
+  "model": "landing.topbarhighlight",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "text": "சொந்த விலை"
+  }
+},
+{
+  "model": "landing.topbarhighlight",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "text": "குறித்த நேர டெலிவரி"
+  }
+},
+{
+  "model": "landing.navmenuitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "label": "முகப்பு",
+    "target_section": "home"
+  }
+},
+{
+  "model": "landing.navmenuitem",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "label": "பொருட்கள்",
+    "target_section": "products"
+  }
+},
+{
+  "model": "landing.navmenuitem",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "label": "செயல்முறை",
+    "target_section": "process"
+  }
+},
+{
+  "model": "landing.navmenuitem",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "label": "மொத்த ஆர்டர்",
+    "target_section": "bulk-order"
+  }
+},
+{
+  "model": "landing.navmenuitem",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "is_active": true,
+    "label": "எங்களைப் பற்றி",
+    "target_section": "about"
+  }
+},
+{
+  "model": "landing.navmenuitem",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "is_active": true,
+    "label": "தொடர்புக்கு",
+    "target_section": "contact"
+  }
+},
+{
+  "model": "landing.herosection",
+  "pk": 1,
+  "fields": {
+    "title": "“உங்கள் வணிகத்திற்குத் தேவையான புதிய காய்கறிகள் மற்றும் பழங்கள் — நம்பிக்கையுடன் நேரடியாக விநியோகம்.”",
+    "description": "“திருமண நிகழ்ச்சி,ஹோட்டல்கள், கேட்டரிங், காய்கறி மற்றும் பழக்கடைகளுக்கான தேவையான மொத்த காய்கறிகள், பழங்கள், அரிசி, மளிகைப் பொருட்கள் மற்றும் பிற அத்தியாவசியப் பொருட்கள் — அனைத்தும் நேரடியாக உங்கள் இடத்திற்கு.",
+    "background_image": "media/ooruzhavan/hero/ChatGPT_Image_Sep_28_2026_11_54_30_AM_mcmigf",
+    "primary_button_text": "தேவைப் பட்டியலை அனுப்புங்கள்",
+    "primary_button_icon": "fa-regular fa-paper-plane",
+    "primary_button_whatsapp_message": "",
+    "secondary_button_text": "பொருட்களைப் பாருங்கள்",
+    "secondary_button_target": "products",
+    "is_active": true,
+    "updated_at": "2026-09-28T11:58:52.180Z"
+  }
+},
+{
+  "model": "landing.herofeature",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "hero": 1,
+    "icon": "fa-solid fa-leaf",
+    "text": "புதிய பொருட்கள்"
+  }
+},
+{
+  "model": "landing.herofeature",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "hero": 1,
+    "icon": "fa-solid fa-coins",
+    "text": "மொத்த விலை"
+  }
+},
+{
+  "model": "landing.herofeature",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "hero": 1,
+    "icon": "fa-solid fa-truck-fast",
+    "text": "இடத்திற்கு டெலிவரி"
+  }
+},
+{
+  "model": "landing.productsection",
+  "pk": 1,
+  "fields": {
+    "badge_icon": "fa-solid fa-sitemap",
+    "badge_text": "முழுமையான வணிக தீர்வு",
+    "title": "பொருட்களின் வகைகள்",
+    "description": "உங்கள் வணிகம் மற்றும் விசேஷங்களுக்கு தேவையான {count} முக்கிய பிரிவுகளில் தரமான புதிய பொருட்கள் மொத்த அளவில் கிடைக்கும்.",
+    "default_button_text": "மொத்த விலை கேட்க",
+    "is_active": true,
+    "updated_at": "2026-09-28T11:58:52.223Z"
+  }
+},
+{
+  "model": "landing.productcategory",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "tag": "Fresh Vegetables",
+    "name": "புதிய காய்கறிகள்",
+    "description": "தக்காளி, வெங்காயம், உருளைக்கிழங்கு, கேரட், பீன்ஸ், முட்டைக்கோஸ் உள்ளிட்ட அனைத்து பருவகால காய்கறிகள்.",
+    "image": "media/ooruzhavan/products/பதய_கயகறகள_-_Fresh_Vegetables_ofqsnl",
+    "button_text": "",
+    "whatsapp_message": "வணக்கம்! புதிய காய்கறிகள் மொத்த விலை விவரம் தேவை."
+  }
+},
+{
+  "model": "landing.productcategory",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "tag": "Fresh Fruits",
+    "name": "புதிய பழங்கள்",
+    "description": "வாழைப்பழ தார்கள், ஆப்பிள், ஆரஞ்சு, எலுமிச்சை, மாதுளை, தர்பூசணி மற்றும் ஜூஸ் பழ வகைகள்.",
+    "image": "media/ooruzhavan/products/பதய_பழஙகள_-_Fresh_Fruits_seoggw",
+    "button_text": "",
+    "whatsapp_message": "வணக்கம்! புதிய பழங்கள் மொத்த விலை விவரம் தேவை."
+  }
+},
+{
+  "model": "landing.productcategory",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "tag": "Rice & Grains",
+    "name": "அரிசி மற்றும் தானியங்கள்",
+    "description": "பொன்னி, இட்லி அரிசி, சீரக சம்பா, பாஸ்மதி, கம்பு, சோளம் மற்றும் உயர்தர தானிய வகைகள் (25/50kg மூட்டைகள்).",
+    "image": "media/ooruzhavan/products/அரச_மறறம_தனயஙகள_-_Rice__Grains_v2z8ju",
+    "button_text": "",
+    "whatsapp_message": "வணக்கம்! அரிசி மற்றும் தானியங்கள் மொத்த விலை விவரம் தேவை."
+  }
+},
+{
+  "model": "landing.productcategory",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "tag": "Grocery & Pulses",
+    "name": "மளிகைப் பொருட்கள் & பருப்பு வகைகள்",
+    "description": "துவரம் பருப்பு, உளுந்து, பாசிப்பருப்பு, கடலைப்பருப்பு, சர்க்கரை மற்றும் முழு மளிகை சரக்குகள்.",
+    "image": "media/ooruzhavan/products/மளகப_பரடகள__பரபப_வககள_-_Grocery__Pulses_ti9emh",
+    "button_text": "",
+    "whatsapp_message": "வணக்கம்! மளிகைப் பொருட்கள் & பருப்பு வகைகள் மொத்த விலை விவரம் தேவை."
+  }
+},
+{
+  "model": "landing.productcategory",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "is_active": true,
+    "tag": "Oil & Spices",
+    "name": "எண்ணெய் மற்றும் மசாலாப் பொருட்கள்",
+    "description": "கடலை எண்ணெய், நல்லெண்ணெய், சூரியகாந்தி எண்ணெய் டின் & கேன்கள், மிளகு, சீரகம், ஏலக்காய், பட்டை கிராம்பு.",
+    "image": "media/ooruzhavan/products/எணணய_மறறம_மசலப_பரடகள_-_Oil__Spices_1_s8hum7",
+    "button_text": "",
+    "whatsapp_message": "வணக்கம்! எண்ணெய் மற்றும் மசாலாப் பொருட்கள் மொத்த விலை விவரம் தேவை."
+  }
+},
+{
+  "model": "landing.productcategory",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "is_active": true,
+    "tag": "Catering Supplies",
+    "name": "கேட்டரிங் & விசேஷ பொருட்கள்",
+    "description": "வாழை இலை கட்டுகள், பொள்ளாச்சி தேங்காய், தாம்பூலம் பொருட்கள், பூக்கள் மற்றும் பிரத்யேக திருமண சமையல் தொகுப்பு.",
+    "image": "media/ooruzhavan/products/கடடரங__வசஷஙகளககன_பரடகள_-_Catering__Function_Supplies_1_c8p2ai",
+    "button_text": "",
+    "whatsapp_message": "வணக்கம்! கேட்டரிங் & விசேஷ பொருட்கள் மொத்த விலை விவரம் தேவை."
+  }
+},
+{
+  "model": "landing.productcategory",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "is_active": true,
+    "tag": "Hotel & Restaurant Supplies",
+    "name": "ஹோட்டல் & உணவக தேவைகள்",
+    "description": "தினசரி கட் காய்கறி சப்ளை, இஞ்சி, பூண்டு மொத்த சரக்குகள், வெங்காயம், தக்காளி கிரேட்கள், சமையல் கூடம் மற்றும் உணவகங்களுக்கான மாதாந்திர/வாராந்திர ஒப்பந்த சப்ளை.",
+    "image": "media/ooruzhavan/products/ஹடடல__உணவக_தவகள_-_Hotel__Restaurant_Supplies_1_karpcg",
+    "button_text": "வணிக ஒப்பந்தம் பேசுக",
+    "whatsapp_message": "வணக்கம்! எங்கள் ஹோட்டல் / உணவகத்திற்கான வணிக ஒப்பந்த சப்ளை பற்றி பேச விரும்புகிறேன்."
+  }
+},
+{
+  "model": "landing.customersection",
+  "pk": 1,
+  "fields": {
+    "badge_icon": "fa-solid fa-users",
+    "badge_text": "B2B வணிக கூட்டாளர்கள்",
+    "title": "யாருக்கு விநியோகிக்கிறோம்?",
+    "description": "மொத்த கொள்முதல் செய்யும் வணிக நிறுவனங்கள் மற்றும் விழாக்களுக்கு ஏற்றவாறு பிரத்யேக B2B சேவை மற்றும் விலை.",
+    "is_active": true,
+    "updated_at": "2026-09-28T11:58:52.274Z"
+  }
+},
+{
+  "model": "landing.customertype",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "icon": "fa-solid fa-hotel",
+    "name": "ஹோட்டல்கள் (Hotels)",
+    "subtitle": "நட்சத்திர & தங்கும் விடுதிகள்",
+    "description": "உயர் தரம் பிரிக்கப்பட்ட காய்கறிகள், பிரீமியம் அரிசி, மளிகைப் பொருட்கள் தினசரி காலை விநியோகம்.",
+    "key_point": "தொடர்ச்சியான தினசரி சப்ளை",
+    "highlight": "B2B ரேட்ஸ்"
+  }
+},
+{
+  "model": "landing.customertype",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "icon": "fa-solid fa-utensils",
+    "name": "உணவகங்கள் (Restaurants)",
+    "subtitle": "மெஸ், தாபா & ஃபாஸ்ட் புட்ஸ்",
+    "description": "அன்றாட சமையலுக்குத் தேவையான பெரிய வெங்காயம், நாட்டு தக்காளி, உருளை, மசாலா பொருட்கள் மற்றும் எண்ணெய் வகைகள்.",
+    "key_point": "கிரேட்கள் மற்றும் மூட்டை விலை",
+    "highlight": "குறைந்த சேதாரம்"
+  }
+},
+{
+  "model": "landing.customertype",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "icon": "fa-solid fa-kitchen-set",
+    "name": "கேட்டரிங் சர்வீசஸ் (Catering Services)",
+    "subtitle": "நிகழ்வு சமையல் ஒப்பந்தக்காரர்கள்",
+    "description": "ஒரே பட்டியலில் அத்தனை பொருட்களையும் குறித்த நேரத்தில் சமையல் கூடம் உள்ள இடத்திற்கே கொண்டு சேர்த்தல்.",
+    "key_point": "முழுமையான பட்டியல் பேக்கிங்",
+    "highlight": "24/7 சேவை"
+  }
+},
+{
+  "model": "landing.customertype",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "icon": "fa-solid fa-bell-concierge",
+    "name": "திருமண நிகழ்ச்சிகள் & விழாக்கள்",
+    "subtitle": "மண்டபங்கள் & சமூக விருந்துகள்",
+    "description": "வாழைப்பழ தார், தேங்காய், பந்தி இலைகள், சீரக சம்பா, நெய், எண்ணெய் மற்றும் காய்கறி மொத்த தொகுப்புகள்.",
+    "key_point": "மண்டபத்திற்கே நேரடி வேன்",
+    "highlight": "மொத்த சேமிப்பு"
+  }
+},
+{
+  "model": "landing.customertype",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "is_active": true,
+    "icon": "fa-solid fa-store",
+    "name": "காய்கறி & பழக்கடைகள் (Retail Shops)",
+    "subtitle": "சில்லறை விற்பனையாளர்கள்",
+    "description": "சில்லறை விற்பனையாளர்களுக்கு அன்றைய சந்தை விலைக்கேற்ப மொத்த கிரேட்கள், பெட்டிகள் மற்றும் சாக்கு மூட்டைகளில் நேரடி விநியோகம்.",
+    "key_point": "மண்டியில் இருந்து நேரடி மூட்டை",
+    "highlight": "மண்டி விலை"
+  }
+},
+{
+  "model": "landing.customertype",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "is_active": true,
+    "icon": "fa-solid fa-building",
+    "name": "பிற வணிக நிறுவனங்கள் (B2B)",
+    "subtitle": "ஹாஸ்டல்கள், கேன்டீன்கள் & நிறுவனங்கள்",
+    "description": "கல்லூரி, தொழிற்சாலை விடுதிகள், தனியார் நிறுவன கேன்டீன்களுக்கான வழக்கமான வாராந்திர/மாதாந்திர கொள்முதல் தேவைகள்.",
+    "key_point": "ஜிஎஸ்டி பில் & முறைப்படுத்தப்பட்ட சப்ளை",
+    "highlight": "B2B பில்லிங்"
+  }
+},
+{
+  "model": "landing.processsection",
+  "pk": 1,
+  "fields": {
+    "title": "எப்படி செயல்படுகிறது?",
+    "description": "உங்கள் நிகழ்வு இடத்திற்கு மிக எளிதாக — சிரமமில்லாமல்.",
+    "step_prefix": "படி",
+    "is_active": true,
+    "updated_at": "2026-09-28T11:58:52.317Z"
+  }
+},
+{
+  "model": "landing.processstep",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "icon": "fa-solid fa-clipboard-list",
+    "title": "பட்டியல் அனுப்பவும்",
+    "description": "உங்களுக்குத் தேவையான பொருட்கள் மற்றும் அவற்றின் அளவை அனுப்பவும்.",
+    "tag": "Form / WhatsApp / Excel"
+  }
+},
+{
+  "model": "landing.processstep",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "icon": "fa-solid fa-file-invoice-dollar",
+    "title": "விலை & இருப்பு உறுதி",
+    "description": "பொருட்களின் இருப்பு மற்றும் மொத்த விலையை நாங்கள் உறுதி செய்வோம்.",
+    "tag": "உடனடி Quoting & Stock Check"
+  }
+},
+{
+  "model": "landing.processstep",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "icon": "fa-solid fa-circle-check",
+    "title": "ஆர்டர் கன்ஃபர்மேஷன்",
+    "description": "ஆர்டரை உறுதிசெய்யவும்.",
+    "tag": "பொருட்கள் தரம் பிரிப்பு & பேக்கிங்"
+  }
+},
+{
+  "model": "landing.processstep",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "icon": "fa-solid fa-truck-ramp-box",
+    "title": "நேரடி டெலிவரி",
+    "description": "உறுதிசெய்யப்பட்ட ஆர்டரை நேரடியாக உங்கள் இடத்திற்கு வழங்குவோம்.",
+    "tag": "குறித்த நேரத்தில் உங்கள் இடத்தில்"
+  }
+},
+{
+  "model": "landing.featuredproductsection",
+  "pk": 1,
+  "fields": {
+    "badge_icon": "",
+    "badge_text": "புதிய வருகை & மொத்த ஸ்டாக்",
+    "title": "முக்கிய பொருட்கள்",
+    "description": "நம்பகமான விவசாயிகளிடமிருந்தும் மொத்த சந்தைகளிலும் இருந்து பெறப்படும் தரமான புதிய பொருட்கள்.",
+    "button_text": "விலை கேட்க",
+    "button_icon": "fa-brands fa-whatsapp",
+    "is_active": true,
+    "updated_at": "2026-09-28T11:58:52.343Z"
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "name": "வாழைப்பழம்",
+    "tag": "பழங்கள்",
+    "description": "பூவன், செவ்வாழை, ரோபஸ்டா மொத்த தார்",
+    "image": "media/ooruzhavan/featured/வழபபழம_r8c9k5",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "name": "தக்காளி",
+    "tag": "காய்கறிகள்",
+    "description": "நாட்டு தக்காளி & ஆப்பிள் தக்காளி கிரேட்கள்",
+    "image": "media/ooruzhavan/featured/தககள_i219yp",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "name": "வெங்காயம்",
+    "tag": "காய்கறிகள்",
+    "description": "சின்ன வெங்காயம், பல்லாரி மூட்டைகள்",
+    "image": "media/ooruzhavan/featured/வஙகயம_hyuu7n",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "name": "உருளைக்கிழங்கு",
+    "tag": "காய்கறிகள்",
+    "description": "ஊட்டி மற்றும் மேட்டுப்பாளையம் தரம்",
+    "image": "media/ooruzhavan/featured/உரளககழஙக_uulqa3",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "is_active": true,
+    "name": "கேரட் (ஊட்டி)",
+    "tag": "காய்கறிகள்",
+    "description": "புதிய மலைத்தோட்ட கேரட் மூட்டைகள்",
+    "image": "media/ooruzhavan/featured/கரட_ydobkq",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "is_active": true,
+    "name": "அரிசி வகைகள்",
+    "tag": "மளிகை",
+    "description": "பொன்னி, சீரக சம்பா, பாஸ்மதி அரிசி",
+    "image": "media/ooruzhavan/featured/அரச_மறறம_தனயஙகள_-_Rice__Grains_olhgl1",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "is_active": true,
+    "name": "பருப்பு வகைகள்",
+    "tag": "மளிகை",
+    "description": "துவரம் பருப்பு, உளுந்து, பாசிப்பருப்பு",
+    "image": "media/ooruzhavan/featured/பரபப_வககள_rozkxg",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.featuredproduct",
+  "pk": 8,
+  "fields": {
+    "order": 8,
+    "is_active": true,
+    "name": "தேங்காய்",
+    "tag": "விழா சிறப்பு",
+    "description": "பொள்ளாச்சி சமையல் & தாம்பூல தேங்காய்",
+    "image": "media/ooruzhavan/featured/கடடரங__வசஷஙகளககன_பரடகள_-_Catering__Function_Supplies_1_zdi0go",
+    "whatsapp_message": ""
+  }
+},
+{
+  "model": "landing.enquirysection",
+  "pk": 1,
+  "fields": {
+    "panel_image": "media/ooruzhavan/enquiry/ஹடடல__உணவக_தவகள_-_Hotel__Restaurant_Supplies_1_h6tva4",
+    "panel_badge_text": "ஊர் உழவன் B2B விநியோகம்",
+    "panel_title": "உங்கள் வணிகத்திற்குத் தேவையான அனைத்து பொருட்களும்",
+    "panel_title_highlight": "ஒரே இடத்தில்!",
+    "panel_description": "தினசரி மண்டி விலையிலேயே சிறந்த தரமான காய்கறிகள், பழங்கள் மற்றும் மளிகைப் பொருட்கள் நேரடியாக உங்கள் வணிக இடத்திற்கு வந்து சேரும்.",
+    "form_title": "மொத்த விலை விசாரணை படிவம் (Wholesale Enquiry)",
+    "form_description": "கீழே உள்ள படிவத்தை பூர்த்தி செய்து உடனடி விலைப் பட்டியல் மற்றும் விநியோக விவரங்களைப் பெறுங்கள்.",
+    "form_badge_icon": "fa-solid fa-bolt",
+    "form_badge_text": "உடனடி பதில்",
+    "upload_icon": "fa-solid fa-arrow-up-from-bracket",
+    "upload_title": "தேவைப் பட்டியல் கோப்பை பதிவேற்றலாம்",
+    "upload_hint": "(Excel, PDF, Handwritten Sheet அல்லது Image)",
+    "max_files": 5,
+    "max_file_size_mb": 10,
+    "whatsapp_box_title": "வாட்ஸ்அப் நேரடி ஆர்டர்",
+    "whatsapp_box_text": "உங்கள் மளிகை/காய்கறி பட்டியலை போட்டோ அல்லது மெசேஜாக நேரடியாக அனுப்பலாம்.",
+    "whatsapp_button_text": "வாட்ஸ்அப்பில் பட்டியலை அனுப்ப",
+    "whatsapp_message": "வணக்கம் ஊர் உழவன்! எனது தேவைப் பட்டியலை இங்கே அனுப்புகிறேன்.",
+    "submit_button_icon": "fa-regular fa-paper-plane",
+    "submit_button_text": "மொத்த விலை கோரிக்கை சமர்ப்பிக்க (Submit Wholesale Enquiry)",
+    "success_message": "நன்றி! உங்கள் மொத்த விலை விசாரணை பெறப்பட்டது. எங்கள் குழு விரைவில் உங்களைத் தொடர்பு கொள்ளும்.",
+    "open_whatsapp_after_submit": true,
+    "is_active": true,
+    "updated_at": "2026-09-28T11:58:52.391Z"
+  }
+},
+{
+  "model": "landing.enquirypanelpoint",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "section": 1,
+    "text": "ஹோட்டல் & கேட்டரிங் சிறப்புத் தேவைகள்"
+  }
+},
+{
+  "model": "landing.enquirypanelpoint",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "section": 1,
+    "text": "வணிக வாடிக்கையாளர் மொத்த விலை"
+  }
+},
+{
+  "model": "landing.enquirypanelpoint",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "section": 1,
+    "text": "குறித்த நேர டெலிவரி உத்தரவாதம்"
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "key": "business_name",
+    "label": "வணிகம் / வாடிக்கையாளர் பெயர் (Business/Customer Name)",
+    "placeholder": "எ.கா. அன்னபூர்ணா கேட்டரிங் / ஹோட்டல்",
+    "icon": "fa-regular fa-building",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "key": "contact_person",
+    "label": "தொடர்பு கொள்ள வேண்டிய நபர் (Contact Person)",
+    "placeholder": "உங்கள் பெயர்",
+    "icon": "fa-regular fa-user",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "key": "mobile",
+    "label": "கைபேசி எண் / WhatsApp (Mobile Number)",
+    "placeholder": "10 இலக்க மொபைல் எண்",
+    "icon": "fa-solid fa-phone",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "key": "business_type",
+    "label": "வணிக வகை (Business Type)",
+    "placeholder": "வணிக வகையைத் தேர்ந்தெடுக்கவும்",
+    "icon": "fa-solid fa-briefcase",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "is_active": true,
+    "key": "delivery_location",
+    "label": "விநியோக இடம் / முகவரி (Delivery Location)",
+    "placeholder": "மண்டபம்/கடை/ஹோட்டல் முகவரி மற்றும் ஊர்",
+    "icon": "fa-solid fa-location-dot",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "is_active": true,
+    "key": "delivery_date",
+    "label": "தேவையான விநியோக தேதி (Delivery Date)",
+    "placeholder": "",
+    "icon": "fa-regular fa-calendar",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "is_active": true,
+    "key": "required_products",
+    "label": "தேவையான பொருட்கள் (Required Products)",
+    "placeholder": "எ.கா. தக்காளி, வெங்காயம், உருளை, அரிசி...",
+    "icon": "fa-solid fa-basket-shopping",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 8,
+  "fields": {
+    "order": 8,
+    "is_active": true,
+    "key": "quantity",
+    "label": "தோராயமான அளவு / எடையளவு (Approx Quantity)",
+    "placeholder": "எ.கா. 50 kg, 200 kg, 10 மூட்டை",
+    "icon": "fa-solid fa-scale-balanced",
+    "is_required": true
+  }
+},
+{
+  "model": "landing.enquiryformfield",
+  "pk": 9,
+  "fields": {
+    "order": 9,
+    "is_active": true,
+    "key": "message",
+    "label": "கூடுதல் தகவல் / குறிப்புகள் (Additional Message)",
+    "placeholder": "குறிப்பிட்ட தரம், கட் காய்கறி தேவை அல்லது சிறப்பு விவரங்களை இங்கே குறிப்பிடவும்...",
+    "icon": "",
+    "is_required": false
+  }
+},
+{
+  "model": "landing.businesstypeoption",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "name": "ஹோட்டல் (Hotel)"
+  }
+},
+{
+  "model": "landing.businesstypeoption",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "name": "உணவகம் (Restaurant)"
+  }
+},
+{
+  "model": "landing.businesstypeoption",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "name": "கேட்டரிங் சர்வீஸ் (Catering Service)"
+  }
+},
+{
+  "model": "landing.businesstypeoption",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "name": "திருமண மண்டபம் / விழா (Wedding / Event)"
+  }
+},
+{
+  "model": "landing.businesstypeoption",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "is_active": true,
+    "name": "காய்கறி & பழக்கடை (Retail Shop)"
+  }
+},
+{
+  "model": "landing.businesstypeoption",
+  "pk": 6,
+  "fields": {
+    "order": 6,
+    "is_active": true,
+    "name": "ஹாஸ்டல் / கேன்டீன் (Hostel / Canteen)"
+  }
+},
+{
+  "model": "landing.businesstypeoption",
+  "pk": 7,
+  "fields": {
+    "order": 7,
+    "is_active": true,
+    "name": "மற்றவை (Other)"
+  }
+},
+{
+  "model": "landing.whyussection",
+  "pk": 1,
+  "fields": {
+    "badge_icon": "fa-solid fa-award",
+    "badge_text": "எங்கள் சிறப்பம்சங்கள்",
+    "title": "ஏன் ஊர் உழவன்?",
+    "description": "தமிழ்நாட்டில் ஹோட்டல்கள், உணவகங்கள், கேட்டரிங் மற்றும் திருமண வணிக வாடிக்கையாளர்களுக்கு நம்பகமான நேரடி சப்ளை பார்ட்னர்.",
+    "is_active": true,
+    "updated_at": "2026-09-28T11:58:52.498Z"
+  }
+},
+{
+  "model": "landing.whyuspoint",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "icon": "fa-solid fa-basket-shopping",
+    "title": "ஒரே இடத்தில் அனைத்தும்",
+    "description": "காய்கறிகள், பழங்கள் மற்றும் முழுமையான மளிகைப் பொருட்கள் அனைத்தும் ஒரே சப்ளையரிடம்."
+  }
+},
+{
+  "model": "landing.whyuspoint",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "icon": "fa-solid fa-hand-holding-dollar",
+    "title": "B2B மொத்த விலை",
+    "description": "வணிக வாடிக்கையாளர்களுக்கான அதிக சேமிப்பு தரும் நேரடி மார்க்கெட் மொத்த விற்பனை விலை."
+  }
+},
+{
+  "model": "landing.whyuspoint",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "icon": "fa-solid fa-kitchen-set",
+    "title": "ஹோட்டல் & கேட்டரிங் சிறப்புத் தேவைகள்",
+    "description": "அளவு, தரம் மற்றும் குறிப்பிட்ட சமையல் முறைகளுக்கு உகந்த பிரத்யேக தயாரிப்பு மற்றும் கிரேடுகள்."
+  }
+},
+{
+  "model": "landing.whyuspoint",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "icon": "fa-solid fa-truck-fast",
+    "title": "ஆர்டர் நேரடி விநியோகம்",
+    "description": "உங்கள் தேவைக்கேற்ப தொகுக்கப்பட்டு குறித்த நேரத்தில் விழா அல்லது வணிக இடத்திற்கே விநியோகம்."
+  }
+},
+{
+  "model": "landing.whyuspoint",
+  "pk": 5,
+  "fields": {
+    "order": 5,
+    "is_active": true,
+    "icon": "fa-solid fa-headset",
+    "title": "நம்பகமான ஆதரவு",
+    "description": "அவசரத் தேவைகள் மற்றும் தினசரி ஆர்டர்களுக்கு உடனடி WhatsApp மற்றும் தொலைபேசி வாடிக்கையாளர் உதவி."
+  }
+},
+{
+  "model": "landing.footersection",
+  "pk": 1,
+  "fields": {
+    "description": "திருமணம், நிகழ்வுகள் மற்றும் பெரிய அளவிலான சமையல் தேவைகளுக்கான பழங்கள், காய்கறிகள், மளிகைப் பொருட்கள் மொத்த விலையில் தமிழ்நாட்டில்.",
+    "quick_links_title": "விரைவு இணைப்புகள்",
+    "contact_title": "தொடர்புக்கு",
+    "address": "மொத்த வியாபார வளாகம்,\nதமிழ்நாடு - 641001",
+    "service_note": "24/7 திருமண ஆர்டர் சேவை",
+    "social_title": "எங்களைப் பின்தொடருங்கள்",
+    "whatsapp_button_text": "வாட்ஸ்அப்பில் நேரடிகள்",
+    "whatsapp_message": "",
+    "copyright_text": "© {year} ஊர் உழவன்  மொத்த விற்பனை. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+    "updated_at": "2026-09-28T11:58:52.563Z"
+  }
+},
+{
+  "model": "landing.sociallink",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "name": "Facebook",
+    "icon": "fa-brands fa-facebook-f",
+    "url": "https://www.facebook.com/"
+  }
+},
+{
+  "model": "landing.sociallink",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "name": "Instagram",
+    "icon": "fa-brands fa-instagram",
+    "url": "https://www.instagram.com/"
+  }
+},
+{
+  "model": "landing.sociallink",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "name": "YouTube",
+    "icon": "fa-brands fa-youtube",
+    "url": "https://www.youtube.com/"
+  }
+},
+{
+  "model": "landing.footerbottomitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "is_active": true,
+    "text": "புதிய பொருட்கள்"
+  }
+},
+{
+  "model": "landing.footerbottomitem",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "is_active": true,
+    "text": "மொத்த விலை"
+  }
+},
+{
+  "model": "landing.footerbottomitem",
+  "pk": 3,
+  "fields": {
+    "order": 3,
+    "is_active": true,
+    "text": "இடத்திற்கு டெலிவரி"
+  }
+},
+{
+  "model": "landing.footerbottomitem",
+  "pk": 4,
+  "fields": {
+    "order": 4,
+    "is_active": true,
+    "text": "தமிழ்நாடு"
+  }
+}
+]
