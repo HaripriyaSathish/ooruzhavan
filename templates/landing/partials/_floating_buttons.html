@@ -1,0 +1,15 @@
+{# Floating WhatsApp + call buttons (bottom right, every page position) #}
+{% if site.show_floating_whatsapp or site.show_floating_call %}
+<div class="floating-actions">
+    {% if site.show_floating_whatsapp %}
+    <a href="{{ wa_default }}" class="floating-btn floating-btn--whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    {% endif %}
+    {% if site.show_floating_call %}
+    <a href="{{ site.phone_link }}" class="floating-btn floating-btn--call" aria-label="Call {{ site.phone_number }}">
+        <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+    </a>
+    {% endif %}
+</div>
+{% endif %}

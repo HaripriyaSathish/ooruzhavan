@@ -1,0 +1,23 @@
+{# SECTION 4: HOW IT WORKS (step numbers are automatic, from display order) #}
+<section class="section process" id="process">
+    <div class="container container--process">
+        <div class="section-head">
+            <h2 class="section-title">{{ process_section.title }}</h2>
+            {% if process_section.description %}
+            <p class="section-desc">{{ process_section.description }}</p>
+            {% endif %}
+        </div>
+
+        <ol class="process__grid">
+            {% for step in process_steps %}
+            <li class="process-step">
+                <span class="process-step__number" aria-hidden="true">{{ forloop.counter }}</span>
+                <span class="process-step__icon"><i class="{{ step.icon }}" aria-hidden="true"></i></span>
+                <h3 class="process-step__title">{{ process_section.step_prefix }} {{ forloop.counter }}: {{ step.title }}</h3>
+                <p class="process-step__desc">{{ step.description }}</p>
+                {% if step.tag %}<span class="process-step__tag">{{ step.tag }}</span>{% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>

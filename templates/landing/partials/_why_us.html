@@ -1,0 +1,27 @@
+{# SECTION 7: WHY CHOOSE US #}
+<section class="section why-us" id="about">
+    <div class="container">
+        <div class="section-head section-head--center">
+            {% if why_us_section.badge_text %}
+            <span class="badge badge--mint">
+                {% if why_us_section.badge_icon %}<i class="{{ why_us_section.badge_icon }}" aria-hidden="true"></i>{% endif %}
+                <span>{{ why_us_section.badge_text }}</span>
+            </span>
+            {% endif %}
+            <h2 class="section-title">{{ why_us_section.title }}</h2>
+            {% if why_us_section.description %}
+            <p class="section-desc">{{ why_us_section.description }}</p>
+            {% endif %}
+        </div>
+
+        <ul class="why-us__grid">
+            {% for point in why_us_points %}
+            <li class="why-card">
+                <span class="why-card__icon"><i class="{{ point.icon }}" aria-hidden="true"></i></span>
+                <h3 class="why-card__title">{{ point.title }}</h3>
+                <p class="why-card__desc">{{ point.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

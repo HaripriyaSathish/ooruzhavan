@@ -1,0 +1,63 @@
+{% load landing_tags %}
+{# SECTION 5: FEATURED PRODUCTS (carousel with leaf background) #}
+<section class="section featured" id="featured-products">
+    <!-- Decorative background (Figma: "Ambient Background"), static -->
+    <div class="featured__decor" aria-hidden="true">
+        <span class="featured__glow featured__glow--green"></span>
+        <span class="featured__glow featured__glow--yellow"></span>
+        <i class="fa-solid fa-leaf featured__leaf featured__leaf--1"></i>
+        <i class="fa-solid fa-seedling featured__leaf featured__leaf--2"></i>
+        <i class="fa-solid fa-seedling featured__leaf featured__leaf--3"></i>
+        <i class="fa-solid fa-wheat-awn featured__leaf featured__leaf--4"></i>
+    </div>
+
+    <div class="container featured__inner">
+        <div class="section-head section-head--split">
+            <div class="section-head__text">
+                {% if featured_section.badge_text %}
+                <span class="badge badge--featured">
+                    {% if featured_section.badge_icon %}<i class="{{ featured_section.badge_icon }}" aria-hidden="true"></i>{% endif %}
+                    <span>{{ featured_section.badge_text }}</span>
+                </span>
+                {% endif %}
+                <h2 class="section-title">{{ featured_section.title }}</h2>
+                {% if featured_section.description %}
+                <p class="section-desc">{{ featured_section.description }}</p>
+                {% endif %}
+            </div>
+
+            <div class="carousel-arrows" data-carousel-arrows="featured">
+                <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="carousel-arrow" data-carousel-next aria-label="Next">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="carousel" data-carousel="featured">
+            <ul class="carousel__track featured__track" data-carousel-track>
+                {% for product in featured_products %}
+                <li class="product-card">
+                    <div class="product-card__media">
+                        {% if product.image %}
+                        <img src="{{ product.image|cld:480 }}" alt="{{ product.name }}" width="206" height="128" loading="lazy" decoding="async">
+                        {% endif %}
+                        {% if product.tag %}<span class="product-card__tag">{{ product.tag }}</span>{% endif %}
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__name">{{ product.name }}</h3>
+                        <p class="product-card__desc">{{ product.description }}</p>
+                    </div>
+                    <a href="{{ product.whatsapp_url }}" class="btn btn--primary product-card__btn" target="_blank" rel="noopener">
+                        {% if featured_section.button_icon %}<i class="{{ featured_section.button_icon }}" aria-hidden="true"></i>{% endif %}
+                        <span>{{ featured_section.button_text }}</span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="carousel__dots" data-carousel-dots aria-label="Slides"></div>
+        </div>
+    </div>
+</section>

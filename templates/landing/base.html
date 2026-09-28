@@ -1,0 +1,28 @@
+{% load static landing_tags %}<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ site.site_name }}{% if site.tagline %} - {{ site.tagline }}{% endif %}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ hero.description|default:site.site_name|truncatechars:160 }}{% endblock %}">
+    <meta name="theme-color" content="#0B3D2C">
+    {% if site.logo %}<link rel="icon" href="{{ site.logo|cld_logo:64 }}">{% endif %}
+
+    <!-- Font: Mukta Malar (the font used in the Figma design, Tamil + English) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+    <script src="{% static 'js/main.js' %}" defer></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

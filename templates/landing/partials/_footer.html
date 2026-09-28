@@ -1,0 +1,93 @@
+{% load landing_tags %}
+{# SECTION 8: FOOTER (logo, name, contact details and WhatsApp number come from Site settings) #}
+<footer class="site-footer" id="contact">
+    <div class="container">
+        <div class="footer__grid">
+
+            <!-- Column 1: brand -->
+            <div class="footer__col footer__col--brand">
+                <a href="#home" class="footer-brand">
+                    <span class="brand__logo footer-brand__logo">
+                        {% if site.logo %}
+                        <img src="{{ site.logo|cld_logo:96 }}" alt="{{ site.site_name }}" width="40" height="40" loading="lazy">
+                        {% else %}
+                        <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                        {% endif %}
+                    </span>
+                    <span class="brand__text">
+                        <span class="footer-brand__name">{{ site.site_name }}</span>
+                        {% if site.tagline %}<span class="footer-brand__tagline">{{ site.tagline }}</span>{% endif %}
+                    </span>
+                </a>
+                {% if footer.description %}<p class="footer__text">{{ footer.description }}</p>{% endif %}
+            </div>
+
+            <!-- Column 2: quick links (same as the nav menu) -->
+            <nav class="footer__col" aria-label="{{ footer.quick_links_title }}">
+                <h2 class="footer__title">{{ footer.quick_links_title }}</h2>
+                <ul class="footer__links">
+                    {% for item in nav_items %}
+                    <li><a href="#{{ item.target_section }}">{{ item.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+
+            <!-- Column 3: contact -->
+            <div class="footer__col">
+                <h2 class="footer__title">{{ footer.contact_title }}</h2>
+                <ul class="footer__contact">
+                    <li>
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <a href="{{ site.phone_link }}">{{ site.phone_number }}</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                    </li>
+                    {% if footer.address %}
+                    <li>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span>{{ footer.address|linebreaksbr }}</span>
+                    </li>
+                    {% endif %}
+                    {% if footer.service_note %}
+                    <li>
+                        <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                        <span>{{ footer.service_note }}</span>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <!-- Column 4: social + WhatsApp -->
+            <div class="footer__col">
+                <h2 class="footer__title">{{ footer.social_title }}</h2>
+                {% if social_links %}
+                <ul class="footer__social">
+                    {% for link in social_links %}
+                    <li>
+                        <a href="{{ link.url }}" target="_blank" rel="noopener" aria-label="{{ link.name }}">
+                            <i class="{{ link.icon }}" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <a href="{{ footer_whatsapp_url }}" class="footer__wa" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <span>{{ footer.whatsapp_button_text }}</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer__bottom">
+            <p class="footer__copyright">{{ footer.copyright_display }}</p>
+            {% if footer_bottom_items %}
+            <ul class="footer__bottom-items">
+                {% for item in footer_bottom_items %}<li>{{ item.text }}</li>{% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</footer>

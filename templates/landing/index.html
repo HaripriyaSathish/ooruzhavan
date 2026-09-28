@@ -1,0 +1,18 @@
+{% extends 'landing/base.html' %}
+
+{% block content %}
+    {% include 'landing/partials/_header.html' %}
+
+    <main>
+        {% if hero %}{% include 'landing/partials/_hero.html' %}{% endif %}
+        {% if product_section %}{% include 'landing/partials/_products.html' %}{% endif %}
+        {% if customer_section %}{% include 'landing/partials/_customers.html' %}{% endif %}
+        {% if process_section %}{% include 'landing/partials/_process.html' %}{% endif %}
+        {% if featured_section %}{% include 'landing/partials/_featured.html' %}{% endif %}
+        {% if enquiry_section %}{% include 'landing/partials/_enquiry.html' %}{% endif %}
+        {% if why_us_section %}{% include 'landing/partials/_why_us.html' %}{% endif %}
+    </main>
+
+    {% include 'landing/partials/_footer.html' %}
+    {% include 'landing/partials/_floating_buttons.html' %}
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load landing_tags %}
+{# SECTION 2: PRODUCT CATEGORIES (carousel) #}
+<section class="section categories" id="products">
+    <div class="container">
+        <div class="section-head section-head--split">
+            <div class="section-head__text">
+                {% if product_section.badge_text %}
+                <span class="badge">
+                    {% if product_section.badge_icon %}<i class="{{ product_section.badge_icon }}" aria-hidden="true"></i>{% endif %}
+                    <span>{{ product_section.badge_text }}</span>
+                </span>
+                {% endif %}
+                <h2 class="section-title">{{ product_section.title }}</h2>
+                {% if product_section.description %}
+                <p class="section-desc">{{ product_section.description_display }}</p>
+                {% endif %}
+            </div>
+
+            <div class="carousel-arrows" data-carousel-arrows="categories">
+                <button type="button" class="carousel-arrow" data-carousel-prev aria-label="Previous">
+                    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                </button>
+                <button type="button" class="carousel-arrow" data-carousel-next aria-label="Next">
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="carousel" data-carousel="categories">
+            <ul class="carousel__track categories__track" data-carousel-track>
+                {% for category in categories %}
+                <li class="category-card">
+                    <div class="category-card__media">
+                        {% if category.image %}
+                        <img src="{{ category.image|cld:640 }}" alt="{{ category.name }}" width="310" height="176" loading="lazy" decoding="async">
+                        {% endif %}
+                        {% if category.tag %}<span class="category-card__tag">{{ category.tag }}</span>{% endif %}
+                    </div>
+                    <div class="category-card__body">
+                        <h3 class="category-card__title">{{ category.name }}</h3>
+                        <p class="category-card__desc">{{ category.description }}</p>
+                    </div>
+                    <a href="{{ category.whatsapp_url }}" class="category-card__link" target="_blank" rel="noopener">
+                        <span>{{ category.button_label }}</span>
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="carousel__dots" data-carousel-dots aria-label="Slides"></div>
+        </div>
+    </div>
+</section>

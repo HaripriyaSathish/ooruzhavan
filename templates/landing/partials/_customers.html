@@ -1,0 +1,38 @@
+{# SECTION 3: WHO WE SERVE / B2B CUSTOMERS #}
+<section class="section customers" id="customers">
+    <div class="container">
+        <div class="section-head section-head--center">
+            {% if customer_section.badge_text %}
+            <span class="badge">
+                {% if customer_section.badge_icon %}<i class="{{ customer_section.badge_icon }}" aria-hidden="true"></i>{% endif %}
+                <span>{{ customer_section.badge_text }}</span>
+            </span>
+            {% endif %}
+            <h2 class="section-title">{{ customer_section.title }}</h2>
+            {% if customer_section.description %}
+            <p class="section-desc">{{ customer_section.description }}</p>
+            {% endif %}
+        </div>
+
+        <ul class="customers__grid">
+            {% for customer in customer_types %}
+            <li class="customer-card">
+                <div class="customer-card__head">
+                    <span class="customer-card__icon"><i class="{{ customer.icon }}" aria-hidden="true"></i></span>
+                    <div>
+                        <h3 class="customer-card__name">{{ customer.name }}</h3>
+                        {% if customer.subtitle %}<p class="customer-card__subtitle">{{ customer.subtitle }}</p>{% endif %}
+                    </div>
+                </div>
+                <p class="customer-card__desc">{{ customer.description }}</p>
+                {% if customer.key_point or customer.highlight %}
+                <div class="customer-card__footer">
+                    <span class="customer-card__point">{% if customer.key_point %}• {{ customer.key_point }}{% endif %}</span>
+                    {% if customer.highlight %}<span class="customer-card__highlight">{{ customer.highlight }}</span>{% endif %}
+                </div>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

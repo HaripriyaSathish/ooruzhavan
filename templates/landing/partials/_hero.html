@@ -1,0 +1,41 @@
+{% load landing_tags %}
+{# SECTION 1: HERO #}
+<section class="hero" id="home">
+    {% if hero.background_image %}
+    <picture class="hero__media" aria-hidden="true">
+        <source media="(max-width: 767px)" srcset="{{ hero.background_image|cld:900 }}">
+        <source media="(max-width: 1440px)" srcset="{{ hero.background_image|cld:1600 }}">
+        <img src="{{ hero.background_image|cld:2200 }}" alt="" fetchpriority="high" decoding="async">
+    </picture>
+    {% endif %}
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+        <div class="hero__content">
+            <h1 class="hero__title">{{ hero.title }}</h1>
+            <p class="hero__description">{{ hero.description }}</p>
+
+            <div class="hero__actions">
+                <a href="{{ hero_wa }}" class="btn btn--primary btn--hero" target="_blank" rel="noopener">
+                    {% if hero.primary_button_icon %}<i class="{{ hero.primary_button_icon }}" aria-hidden="true"></i>{% endif %}
+                    <span>{{ hero.primary_button_text }}</span>
+                </a>
+                <a href="#{{ hero.secondary_button_target }}" class="btn btn--outline btn--hero">
+                    <span>{{ hero.secondary_button_text }}</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            {% if hero_features %}
+            <ul class="hero__features">
+                {% for feature in hero_features %}
+                <li class="hero__feature">
+                    <i class="{{ feature.icon }}" aria-hidden="true"></i>
+                    <span>{{ feature.text }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,138 @@
+{% load landing_tags %}
+{# SECTION 6: BULK ORDER / WHOLESALE ENQUIRY FORM #}
+<section class="section enquiry" id="bulk-order">
+    <div class="container enquiry__grid">
+
+        <!-- Left: visual banner -->
+        <aside class="enquiry-panel">
+            {% if enquiry_section.panel_image %}
+            <img class="enquiry-panel__img" src="{{ enquiry_section.panel_image|cld:900 }}" alt="" loading="lazy" decoding="async">
+            {% endif %}
+            <div class="enquiry-panel__content">
+                {% if enquiry_section.panel_badge_text %}<span class="enquiry-panel__badge">{{ enquiry_section.panel_badge_text }}</span>{% endif %}
+                <h3 class="enquiry-panel__title">
+                    {{ enquiry_section.panel_title }}
+                    {% if enquiry_section.panel_title_highlight %}<span>{{ enquiry_section.panel_title_highlight }}</span>{% endif %}
+                </h3>
+                {% if enquiry_section.panel_description %}<p class="enquiry-panel__desc">{{ enquiry_section.panel_description }}</p>{% endif %}
+                {% if enquiry_points %}
+                <ul class="enquiry-panel__points">
+                    {% for point in enquiry_points %}
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>{{ point.text }}</span></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </aside>
+
+        <!-- Right: form card -->
+        <div class="enquiry-card">
+            <div class="enquiry-card__head">
+                <div>
+                    <h2 class="enquiry-card__title">{{ enquiry_section.form_title }}</h2>
+                    {% if enquiry_section.form_description %}<p class="enquiry-card__desc">{{ enquiry_section.form_description }}</p>{% endif %}
+                </div>
+                {% if enquiry_section.form_badge_text %}
+                <span class="enquiry-card__badge">
+                    {% if enquiry_section.form_badge_icon %}<i class="{{ enquiry_section.form_badge_icon }}" aria-hidden="true"></i>{% endif %}
+                    {{ enquiry_section.form_badge_text }}
+                </span>
+                {% endif %}
+            </div>
+
+            <form class="enquiry-form" id="enquiryForm" action="{% url 'landing:submit_enquiry' %}" method="post"
+                  enctype="multipart/form-data" novalidate
+                  data-max-files="{{ enquiry_section.max_files }}"
+                  data-max-mb="{{ enquiry_section.max_file_size_mb }}"
+                  data-extensions="{{ upload_extensions }}"
+                  data-open-whatsapp="{{ enquiry_section.open_whatsapp_after_submit|yesno:'1,0' }}">
+                {% csrf_token %}
+                <!-- Spam trap: hidden from people, bots fill it in -->
+                <div class="hp-field" aria-hidden="true">
+                    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                </div>
+
+                <div class="enquiry-form__grid">
+                    {% for field in enquiry_fields %}
+                    <div class="field{% if field.key == 'message' %} field--full{% endif %}" data-field="{{ field.key }}">
+                        <label class="field__label" for="f-{{ field.key }}">
+                            {{ field.label }}{% if field.is_required or field.key == 'mobile' %} <span class="field__req">*</span>{% endif %}
+                        </label>
+                        <div class="field__control{% if field.icon %} field__control--icon{% endif %}{% if field.key == 'business_type' %} field__control--select{% endif %}">
+                            {% if field.icon %}<i class="{{ field.icon }} field__icon" aria-hidden="true"></i>{% endif %}
+
+                            {% if field.key == 'business_type' %}
+                            <select id="f-{{ field.key }}" name="{{ field.key }}" {% if field.is_required %}required{% endif %}>
+                                <option value="">{{ field.placeholder|default:'—' }}</option>
+                                {% for option in business_types %}<option value="{{ option.name }}">{{ option.name }}</option>{% endfor %}
+                            </select>
+                            <i class="fa-solid fa-chevron-down field__chevron" aria-hidden="true"></i>
+
+                            {% elif field.key == 'message' %}
+                            <textarea id="f-{{ field.key }}" name="{{ field.key }}" rows="3" maxlength="2000"
+                                      placeholder="{{ field.placeholder }}" {% if field.is_required %}required{% endif %}></textarea>
+
+                            {% elif field.key == 'delivery_date' %}
+                            <input id="f-{{ field.key }}" type="date" name="{{ field.key }}" min="{{ today }}" max="{{ max_date }}"
+                                   {% if field.is_required %}required{% endif %}>
+
+                            {% elif field.key == 'mobile' %}
+                            <input id="f-{{ field.key }}" type="tel" name="{{ field.key }}" inputmode="tel" autocomplete="tel"
+                                   maxlength="16" placeholder="{{ field.placeholder }}" required>
+
+                            {% else %}
+                            <input id="f-{{ field.key }}" type="text" name="{{ field.key }}" placeholder="{{ field.placeholder }}"
+                                   maxlength="{% if field.key == 'delivery_location' %}300{% elif field.key == 'contact_person' %}100{% elif field.key == 'required_products' %}2000{% elif field.key == 'quantity' %}200{% else %}150{% endif %}"
+                                   {% if field.key == 'contact_person' %}autocomplete="name"{% elif field.key == 'business_name' %}autocomplete="organization"{% elif field.key == 'delivery_location' %}autocomplete="street-address"{% endif %}
+                                   {% if field.is_required %}required{% endif %}>
+                            {% endif %}
+                        </div>
+                        <p class="field__error" id="err-{{ field.key }}" role="alert"></p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Upload + WhatsApp -->
+                <div class="enquiry-form__extras">
+                    <div class="upload-box" id="uploadBox">
+                        <input type="file" id="enquiryFiles" name="files" multiple accept="{{ upload_accept }}" class="upload-box__input">
+                        <label for="enquiryFiles" class="upload-box__drop">
+                            {% if enquiry_section.upload_icon %}<i class="{{ enquiry_section.upload_icon }} upload-box__icon" aria-hidden="true"></i>{% endif %}
+                            <span class="upload-box__title">{{ enquiry_section.upload_title }}</span>
+                            {% if enquiry_section.upload_hint %}<span class="upload-box__hint">{{ enquiry_section.upload_hint }}</span>{% endif %}
+                        </label>
+                        <ul class="upload-box__list" id="uploadList"></ul>
+                        <p class="field__error" id="err-files" role="alert"></p>
+                    </div>
+
+                    <div class="wa-box">
+                        <p class="wa-box__title"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> {{ enquiry_section.whatsapp_box_title }}</p>
+                        {% if enquiry_section.whatsapp_box_text %}<p class="wa-box__text">{{ enquiry_section.whatsapp_box_text }}</p>{% endif %}
+                        <a href="{{ enquiry_whatsapp_url }}" class="wa-box__btn" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            <span>{{ enquiry_section.whatsapp_button_text }}</span>
+                        </a>
+                    </div>
+                </div>
+
+                <p class="form-alert form-alert--error" id="formError" role="alert" hidden></p>
+
+                <button type="submit" class="enquiry-submit" id="enquirySubmit">
+                    {% if enquiry_section.submit_button_icon %}<i class="{{ enquiry_section.submit_button_icon }}" aria-hidden="true"></i>{% endif %}
+                    <span class="enquiry-submit__text">{{ enquiry_section.submit_button_text }}</span>
+                </button>
+            </form>
+
+            <!-- Shown after a successful submit -->
+            <div class="form-success" id="formSuccess" hidden>
+                <i class="fa-solid fa-circle-check form-success__icon" aria-hidden="true"></i>
+                <p class="form-success__text" id="formSuccessText">{{ enquiry_section.success_message }}</p>
+                <a href="#" class="wa-box__btn form-success__wa" id="formSuccessWa" target="_blank" rel="noopener" hidden>
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    <span>{{ enquiry_section.whatsapp_button_text }}</span>
+                </a>
+                <button type="button" class="form-success__again" id="formAgain">புதிய விசாரணை அனுப்ப</button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,87 @@
+{% load landing_tags %}
+{# SECTION 1: TOP BAR + NAVBAR (fixed together at the top) #}
+<header class="site-header" id="siteHeader">
+
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="topbar__inner">
+            <ul class="topbar__contact">
+                <li>
+                    <a href="{{ site.phone_link }}" class="topbar__item" aria-label="{{ site.topbar_phone_label }} {{ site.phone_number }}">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>{{ site.topbar_phone_label }}</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:{{ site.email }}" class="topbar__item" aria-label="{{ site.topbar_email_label }} {{ site.email }}">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>{{ site.topbar_email_label }}</span>
+                    </a>
+                </li>
+                {% if site.location %}
+                <li>
+                    <span class="topbar__item">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span>{{ site.location }}</span>
+                    </span>
+                </li>
+                {% endif %}
+            </ul>
+
+            {% if topbar_highlights %}
+            <ul class="topbar__highlights">
+                {% for item in topbar_highlights %}
+                <li>{{ item.text }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="navbar__inner">
+            <a href="#home" class="brand">
+                <span class="brand__logo">
+                    {% if site.logo %}
+                    <img src="{{ site.logo|cld_logo:96 }}" alt="{{ site.site_name }}" width="40" height="40">
+                    {% else %}
+                    <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                    {% endif %}
+                </span>
+                <span class="brand__text">
+                    <span class="brand__name">{{ site.site_name }}</span>
+                    {% if site.tagline %}<span class="brand__tagline">{{ site.tagline }}</span>{% endif %}
+                </span>
+            </a>
+
+            <ul class="nav-links">
+                {% for item in nav_items %}
+                <li><a href="#{{ item.target_section }}" class="nav-link{% if forloop.first %} is-active{% endif %}" data-nav-link>{{ item.label }}</a></li>
+                {% endfor %}
+            </ul>
+
+            <a href="{{ wa_default }}" class="btn btn--primary btn--header navbar__cta" target="_blank" rel="noopener">
+                {% if site.header_cta_icon %}<i class="{{ site.header_cta_icon }}" aria-hidden="true"></i>{% endif %}
+                <span>{{ site.header_cta_text }}</span>
+            </a>
+
+            <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Menu">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu" hidden>
+            <ul class="mobile-menu__links">
+                {% for item in nav_items %}
+                <li><a href="#{{ item.target_section }}" class="nav-link{% if forloop.first %} is-active{% endif %}" data-nav-link>{{ item.label }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="{{ wa_default }}" class="btn btn--primary btn--header mobile-menu__cta" target="_blank" rel="noopener">
+                {% if site.header_cta_icon %}<i class="{{ site.header_cta_icon }}" aria-hidden="true"></i>{% endif %}
+                <span>{{ site.header_cta_text }}</span>
+            </a>
+        </div>
+    </nav>
+</header>
